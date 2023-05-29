@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: fct_vendas
+    description: Tabela fato de vendas
+    columns:
+      - name: sk_venda
+        description: Primary key da fato vendas
+        tests:
+          - unique
+          - not_null
+
+      - name: salesorder_id
+        description: Identificador das vendas
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_clientes
+        description: Foreign key da dim clientes
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_localizacao
+        description: Foreign key da dim localizacao
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_produto
+        description: Foreign key da dim produto
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_motivo_de_venda
+        description: Foreign key da dim motivo de venda
+        tests:
+          - unique
+          - not_null
+
+      - name: quantidade
+        description: Quantidade de pedido
+
+      - name: preco_un
+        description: Preço unitário
+
+      - name: desconto_un
+        description: Desconto unitário
+
+      - name: nome_produto
+        description: Nome do produto
+
+      - name: cardtype
+        description: Tipo de cartão
+
+      - name: nome_motivo
+        description: Nome do motivo da venda
+
+      - name: orderdate
+        description: Data da venda
+
+      - name: nome
+        description: Nome do cliente
+
+      - name: middlename
+        description: Nome do meio do cliente
+
+      - name: sobrenome
+        description: Sobrenome do cliente
+
+      - name: status_venda
+        description: Status da venda
+
+      - name: nome_pais
+        description: Nome do país
+
+      - name: nome_estado
+        description: Nome do estado
+
+      - name: nome_cidade
+        description: Nome do cidade
+
+      - name: full_date
+        description: Data completa, dia, mes e ano
+
+      - name: fullname
+        description: Nome e sobrenome do cliente
+
+      - name: unidade_com_desconto
+        description: Preço unitário após desconto
+
+
+
+
+        

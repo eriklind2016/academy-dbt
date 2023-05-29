@@ -36,7 +36,6 @@ with
             , localizacao.sk_stateprovince_id as fk_localizacao  
             , produto.sk_produto as fk_produto 
             , motivo_venda.sk_salesreason_id as fk_motivo_de_venda
-            , venda_pedido.totaldue
             , venda_pedido.orderqty as quantidade
             , venda_pedido.unitprice as preco_un
             , venda_pedido.unitpricediscount as desconto_un
@@ -72,8 +71,6 @@ with
             salesorder_id || '-' || fk_produto as sk_venda
             , *
             , CONCAT(nome, ' ', sobrenome) as fullname
-            , quantidade * preco_un as total_bruto
-            , (preco_un - desconto_un) * quantidade as total_liquido
             , preco_un - (preco_un*desconto_un) as unidade_com_desconto
             
  
