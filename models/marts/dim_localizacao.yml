@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: dim_localizacao
+    description: Dimensão de localizacao 
+    columns:
+      - name: sk_stateprovince_id
+        description: Primary key da dimensão de localizacao
+        tests:
+          - unique
+          - not_null
+
+      - name: address_id
+        description: Identificador dos enderecos
+        tests:
+          - unique
+          - not_null
+
+      - name: stateprovince_id
+        description: Identificador dos estados
+        tests:
+          - unique
+          - not_null
+
+      - name: countryregioncode
+        description: Identificador que conecta a tabela de estado com país
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_cidade
+        description: Nome da cidade
+      
+      - name: nome_estado
+        description: Nome do estado
+
+      - name: nome_pais
+        description: Nome do país
+
+        
