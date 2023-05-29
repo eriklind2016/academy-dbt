@@ -17,14 +17,7 @@ with
     , uniao_tabelas as (
         select 
             produto.product_id
-            , produto.productsubcategory_id
             , produto.name as nome_produto
-            , produto.productmodelid						
-            , produto.sellstartdate						
-            , produto.sellenddate	
-            , produtophoto.productphoto_id
-            , produtophoto.primeiro
-            , oferta.specialoffer_id
         from produto 
         left join produtophoto on produto.product_id = produtophoto.product_id
         left join oferta on produtophoto.product_id = oferta.product_id   
