@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_motivo_de_venda
+    description: Dimensão de motivo de venda 
+    columns:
+      - name: sk_salesreason_id
+        description: Primary key da dimensão de motivo de venda
+        tests:
+          - unique
+          - not_null
+
+      - name: salesreason_id
+        description: Identificador dos motivos de venda
+        tests:
+          - unique
+          - not_null
+
+      - name: salesorder_id
+        description: Identificador da ordem de venda, conecta com a tabela fato venda
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_motivo
+        description: Nome do motivo de venda
+
