@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: Dimensão de clientes 
+    columns:
+      - name: sk_businessentity_id
+        description: Primary key da dimensão de clientes
+        tests:
+          - unique
+          - not_null
+
+      - name: businessentity_id
+        description: Identificador dos clientes
+        tests:
+          - unique
+          - not_null
+
+      - name: firstname
+        description: Nome do cliente
+
+      - name: middlename
+        description: Nome do meio do cliente
+
+      - name: lastname
+        description: Sobrenome do cliente
+
+      - name: cardtype
+        description: Tipo de cartão do cliente
+      

@@ -1,0 +1,148 @@
+version: 2
+
+sources:
+  - name: erp
+    description: banco do erp da adventure adventure works
+    schema: sap_adw
+    tables:
+      - name: product
+        description: tabela de produtos
+        columns:
+          - name: productid
+            description: identificador de produto
+            tests:
+              - unique
+              - not_null
+
+      - name: salesorderheader
+        description: tabela de vendas
+        columns:
+          - name: salesorderid
+            description: identificador da venda
+            tests:
+              - unique
+              - not_null
+
+      - name: salesorderdetail
+        description: tabela de detalhes das vendas
+        columns:
+          - name: salesorderid
+            description: identificador da venda
+            tests:
+              - unique
+              - not_null
+          - name: salesorderdetailid
+            description: id do order detail
+            tests:
+              - unique
+              - not_null
+
+
+      - name: creditcard
+        description: tabela ref aos cartoes de credito
+        columns:
+          - name: creditcardid
+            description: identificador do cartao
+            tests:
+              - unique
+              - not_null
+             
+
+      - name: personcreditcard
+        description: tabela para conectar creditcard a tabela Person
+        columns:
+          - name: businessentityid
+            description: identificador 
+            tests:
+              - unique
+              - not_null
+
+      - name: person
+        description: tabela com dados dos clientes
+        columns:
+          - name: businessentityid
+            description: identificador 
+            tests:
+              - unique
+              - not_null
+
+      - name: productproductphoto
+        description: tabela para conectar com tabela product
+        columns:
+          - name: productid
+            description: identificador 
+            tests:
+              - unique
+              - not_null
+
+      - name: specialofferproduct
+        description: tabela para conectar sales com tabela product
+        columns:
+          - name: productid
+            description: identificador 
+            tests:
+              - unique
+              - not_null
+          - name: specialofferid
+            description: identificador 
+            tests:
+              - unique
+              - not_null
+
+      - name: address
+        description: tabela ref a localizacao
+        columns:
+          - name: addressid
+            description: identificador 
+            tests:
+              - unique
+              - not_null
+          - name: stateprovinceid
+            description: identificador 
+            tests:
+              - unique
+              - not_null
+
+      - name: stateprovince
+        description: tabela ref a localizacao
+        columns:
+          - name: stateprovinceid
+            description: identificador 
+            tests:
+              - unique
+              - not_null
+          - name: countryregion
+            description: identificador 
+            tests:
+              - not_null
+
+      - name: countryregion
+        description: tabela ref a localizacao
+        columns:
+          - name: countryregion
+            description: identificador 
+            tests:
+              - not_null
+
+      - name: salesreason
+        description: tabela ref ao motivo de venda
+        columns:
+          - name: salesreasonid
+            description: identificador 
+            tests:
+              - not_null
+              - unique
+
+      - name: salesorderheadersalesreason
+        description: tabela conecta fato ao motivo de venda
+        columns:
+          - name: salesreasonid
+            description: identificador que conecta ao motivo de venda 
+            tests:
+              - not_null
+              - unique
+          - name: salesorderid
+            description: identificador que conecta a tabela fato
+            tests: 
+              - not_null
+              - unique

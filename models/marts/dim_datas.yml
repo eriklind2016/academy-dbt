@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: dim_datas
+    description: Dimensão de datas para com todos os dias do início ao término dos registros dos dados da Adventure Works 
+
+      
